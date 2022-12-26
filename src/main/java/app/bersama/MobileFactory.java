@@ -29,7 +29,7 @@ public class MobileFactory {
             dc.setCapability(MobileCapabilityType.PLATFORM_VERSION,"11");
             dc.setCapability(CapabilityType.PLATFORM_NAME, Platform.ANDROID.toString());
             dc.setCapability(MobileCapabilityType.APP, absPathApk);
-            dc.setCapability(MobileCapabilityType.DEVICE_NAME, "iPhone");
+            dc.setCapability(MobileCapabilityType.DEVICE_NAME, "Infinix Hot 11S");
             dc.setCapability(MobileCapabilityType.NO_RESET, false);
 
         } else if (platformType.equalsIgnoreCase("IOS")) {
