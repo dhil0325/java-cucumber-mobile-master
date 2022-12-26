@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -23,5 +24,11 @@ public class MyAccountPage {
         this.driver = appiumDriver;
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         PageFactory.initElements(driver, this);
+    }
+    @FindBy(id = "id.binar.fp.secondhand:id/btn_login")
+    private WebElement button_login;
+
+    public void tapButtonLogin() {
+        button_login.click();
     }
 }
