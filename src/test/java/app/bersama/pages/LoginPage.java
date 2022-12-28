@@ -39,6 +39,9 @@ public class LoginPage {
     @FindBy(id = "id.binar.fp.secondhand:id/tv_register")
     private WebElement navLinkRegister;
 
+    @FindBy(xpath = ".//*[contains(@text,'Email atau kata sandi salah')]")
+    private WebElement toastError;
+
     public void Login(String email, String password) {
         Keyword.enterText(emailField, email);
         Keyword.enterText(passwordField, password);
@@ -48,4 +51,11 @@ public class LoginPage {
     public void navigateToRegister(){
         navLinkRegister.click();
     }
+
+//    public void setToastError(){
+//        WebDriverWait wait = new WebDriverWait(driver, 3);
+//        wait.until(ExpectedConditions.presenceOfElementLocated('.//*[contains(@text,'Email atau kata sandi salah')])');
+//
+//
+//    }
 }

@@ -1,5 +1,6 @@
 package app.bersama.pages;
 
+import app.bersama.Keyword;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -24,4 +25,8 @@ public class HomePage {
 
     @FindBy(id = "id.binar.fp.secondhand:id/cv_category")
     private WebElement allCategory;
+
+    public void setSearchField() {
+        searchField.click();
+    }
 }

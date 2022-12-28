@@ -1,5 +1,6 @@
 package app.bersama.pages;
 
+import app.bersama.Keyword;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -28,5 +29,8 @@ public class ProfilePage {
     @FindBy(id = "id.binar.fp.secondhand:id/iv_edit")
     private WebElement editAccountButton;
 
+    public void verifyProfilePage(){
+        Keyword.waitUntilElementIsVisible(editAccountButton);
+    }
 
 }

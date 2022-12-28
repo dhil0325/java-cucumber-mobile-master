@@ -1,9 +1,7 @@
 package app.bersama.steps;
 
 import app.bersama.DriverManager;
-import app.bersama.pages.LoginPage;
-import app.bersama.pages.MyAccountPage;
-import app.bersama.pages.NavigationSectionPage;
+import app.bersama.pages.*;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -25,17 +23,56 @@ public class CommonStep {
         myAccountPage.tapButtonLogin();
     }
 
-    @When("user login with valid credential")
-    public void user_login_with_valid_credential() {
+    @When("user login with {string}")
+    public void userLoginWith(String credentialType) {
+        String email = "";
+        String password = "";
+        switch (credentialType) {
+            case "valid_credential1":
+                email = "lageming54@gmail.com";
+                password = "fadhil45";
+                break;
+
+            case "valid_credential2":
+                email = "frozt.fadhil@gmail.com";
+                password = "fadhil45";
+                break;
+
+            case "invalid_credential":
+                email = "lageming54@gmail.com";
+                password = "asdasdsadsa";
+                break;
+        }
         LoginPage loginPage = new LoginPage(
                 DriverManager.getInstance().getDriver());
-        loginPage.Login("lageming54@gmail.com", "fadhil45");
+        loginPage.Login(email, password);
     }
 
-    @Then("user should be able to login")
-    public void user_should_be_able_to_login() {
-
+    @Then("user should be directed to profilepage")
+    public void userShouldBeDirectedToProfilepage() {
+        ProfilePage profilePage = new ProfilePage(DriverManager.getInstance().getDriver());
+        profilePage.verifyProfilePage();
     }
 
+    @Given("navigate to homepage and tap search field")
+    public void navigateToHomepageAndTapSearchField() {
+        NavigationSectionPage navigationSectionPage = new NavigationSectionPage(DriverManager.
+                getInstance().getDriver());
+        HomePage homePage = new HomePage(DriverManager.getInstance().getDriver());
+        navigationSectionPage.tapButtonHome();
+        homePage.setSearchField();
+    }
 
+    @When("input product search and click product")
+    public void inputProductSearchAndClickProduct() {
+        SearchPage searchPage = new SearchPage(DriverManager.getInstance().getDriver());
+        searchPage.inputSearch("Nintendo Switch");
+        searchPage.tapProductSearch();
+    }
+
+    @Then("navigate to product page")
+    public void navigateToProductPage() {
+        ProductPage productPage = new ProductPage(DriverManager.getInstance().getDriver());
+        productPage.verifyProductPage();
+    }
 }
