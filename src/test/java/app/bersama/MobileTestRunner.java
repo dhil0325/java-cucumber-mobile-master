@@ -13,7 +13,7 @@ import java.net.MalformedURLException;
  * @project java-cucumber-mobile
  */
 
-@CucumberOptions(features = "src/test/java/app/bersama/features/Register.feature",
+@CucumberOptions(features = "src/test/java/app/bersama/features/Order.feature",
         glue = "app.bersama.steps",
         plugin = {
                 "pretty",
