@@ -38,6 +38,11 @@ public class CommonStep {
                 password = "fadhil45";
                 break;
 
+            case "valid_credential3":
+                email = "fadhil2309@gmail.com";
+                password = "fadhil45";
+                break;
+
             case "invalid_credential":
                 email = "lageming54@gmail.com";
                 password = "asdasdsadsa";
