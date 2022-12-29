@@ -35,5 +35,7 @@ public class ProfilePage {
     public void tapButtonDaftarJual(){
         daftarJualButton.click();
     }
-
+    public void setLogoutButton(){
+        logoutButton.click();
+    }
 }

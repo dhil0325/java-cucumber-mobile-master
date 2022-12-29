@@ -38,6 +38,11 @@ public class CommonStep {
                 password = "fadhil45";
                 break;
 
+            case "valid_credential3":
+                email = "fadhil2309@gmail.com";
+                password = "fadhil45";
+                break;
+
             case "invalid_credential":
                 email = "lageming54@gmail.com";
                 password = "asdasdsadsa";
@@ -80,5 +85,11 @@ public class CommonStep {
     public void userNavigateToHomepage() {
         NavigationSectionPage navigationSectionPage = new NavigationSectionPage(DriverManager.getInstance().getDriver());
         navigationSectionPage.tapButtonHome();
+    }
+
+    @When("user tap logout button")
+    public void userTapLogoutButton() {
+        ProfilePage profilePage = new ProfilePage(DriverManager.getInstance().getDriver());
+        profilePage.setLogoutButton();
     }
 }
