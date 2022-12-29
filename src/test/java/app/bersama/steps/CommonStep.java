@@ -81,4 +81,10 @@ public class CommonStep {
         NavigationSectionPage navigationSectionPage = new NavigationSectionPage(DriverManager.getInstance().getDriver());
         navigationSectionPage.tapButtonHome();
     }
+
+    @When("user tap logout button")
+    public void userTapLogoutButton() {
+        ProfilePage profilePage = new ProfilePage(DriverManager.getInstance().getDriver());
+        profilePage.setLogoutButton();
+    }
 }
