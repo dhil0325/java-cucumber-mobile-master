@@ -75,4 +75,10 @@ public class CommonStep {
         ProductPage productPage = new ProductPage(DriverManager.getInstance().getDriver());
         productPage.verifyProductPage();
     }
+
+    @Given("user navigate to homepage")
+    public void userNavigateToHomepage() {
+        NavigationSectionPage navigationSectionPage = new NavigationSectionPage(DriverManager.getInstance().getDriver());
+        navigationSectionPage.tapButtonHome();
+    }
 }

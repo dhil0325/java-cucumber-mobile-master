@@ -28,6 +28,9 @@ public class NavigationSectionPage {
     @FindBy(id = "id.binar.fp.secondhand:id/navigation_home")
     private WebElement button_home;
 
+    @FindBy(id = "id.binar.fp.secondhand:id/fab")
+    private WebElement button_jual;
+
     @FindBy(id = "id.binar.fp.secondhand:id/navigation_profile")
     private WebElement button_account;
 
@@ -44,6 +47,10 @@ public class NavigationSectionPage {
 
     public void tapButtonHome() {
         button_home.click();
+    }
+
+    public void tapButtonJual() {
+        button_jual.click();
     }
 }
 
