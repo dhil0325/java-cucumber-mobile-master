@@ -1,6 +1,8 @@
 package app.bersama.steps;
 
 import app.bersama.DriverManager;
+import app.bersama.pages.DaftarJualPage;
+import app.bersama.pages.InfoPenawarPage;
 import app.bersama.pages.ProductPage;
 import app.bersama.pages.ProfilePage;
 import io.cucumber.java.en.Given;
@@ -27,4 +29,31 @@ public class OrderStep {
 
     }
 
+    @Given("user tap daftar jual saya")
+    public void userTapDaftarJualSaya() {
+        ProfilePage profilePage = new ProfilePage(DriverManager.getInstance().getDriver());
+        profilePage.tapButtonDaftarJual();
+    }
+
+    @Given("user tap navigation list diminati and choose product want to accept")
+    public void userTapNavigationListDiminatiAndChooseProductWantToAccept() {
+        DaftarJualPage daftarJualPage = new DaftarJualPage(DriverManager.getInstance().getDriver());
+        daftarJualPage.setNavigationDiminati();
+    }
+
+
+    @When("user tap button terima")
+    public void userTapButtonTerima() {
+        InfoPenawarPage infoPenawarPage = new InfoPenawarPage(DriverManager.getInstance().getDriver());
+        infoPenawarPage.setAcceptProduct();
+        
+    }
+
+
+    @Then("user see transaction frame {string}")
+    public void userSeeTransactionFrame(String value) {
+        new InfoPenawarPage(DriverManager.getInstance().getDriver()).
+                setFrameDone(value);
+
+    }
 }
