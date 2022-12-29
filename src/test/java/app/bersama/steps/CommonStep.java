@@ -66,7 +66,7 @@ public class CommonStep {
     @When("input product search and click product")
     public void inputProductSearchAndClickProduct() {
         SearchPage searchPage = new SearchPage(DriverManager.getInstance().getDriver());
-        searchPage.inputSearch("Nintendo Switch");
+        searchPage.inputSearch("Akun RF Dewa");
         searchPage.tapProductSearch();
     }
 
@@ -74,5 +74,11 @@ public class CommonStep {
     public void navigateToProductPage() {
         ProductPage productPage = new ProductPage(DriverManager.getInstance().getDriver());
         productPage.verifyProductPage();
+    }
+
+    @Given("user navigate to homepage")
+    public void userNavigateToHomepage() {
+        NavigationSectionPage navigationSectionPage = new NavigationSectionPage(DriverManager.getInstance().getDriver());
+        navigationSectionPage.tapButtonHome();
     }
 }

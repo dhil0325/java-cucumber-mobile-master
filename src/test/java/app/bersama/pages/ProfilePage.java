@@ -32,5 +32,8 @@ public class ProfilePage {
     public void verifyProfilePage(){
         Keyword.waitUntilElementIsVisible(editAccountButton);
     }
+    public void tapButtonDaftarJual(){
+        daftarJualButton.click();
+    }
 
 }
